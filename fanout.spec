@@ -7,6 +7,7 @@ License:	GPL
 Group:		Networking/Remote access
 Source:		http://www.stearns.org/fanout/fanout-%{version}.tar.bz2
 URL:		http://www.stearns.org/fanout/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 Buildarch:	noarch
 requires:	xterm
 
