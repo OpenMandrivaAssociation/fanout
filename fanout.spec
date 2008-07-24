@@ -2,7 +2,7 @@
 Summary:	Fanout lets you run commands on multiple remote machines simultaneously
 Name:		fanout
 Version:	%{version}
-Release:	%mkrel 4
+Release:	%mkrel 6
 License:	GPL
 Group:		Networking/Remote access
 Source:		http://www.stearns.org/fanout/fanout-%{version}.tar.bz2
