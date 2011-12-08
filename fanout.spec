@@ -23,10 +23,10 @@ machines simultaneously, collecting the output in an organized fashion.
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/%{_bindir}
 #%make DESTDIR=$RPM_BUILD_ROOT install
-echo $RPM_BUILD_DIR
-cp -avf $RPM_BUILD_DIR/%name-%version/fanout $RPM_BUILD_ROOT/%{_bindir}
-cp -avf $RPM_BUILD_DIR/%name-%version/fanterm $RPM_BUILD_ROOT/%{_bindir}
-cp -avf $RPM_BUILD_DIR/%name-%version/fanmux $RPM_BUILD_ROOT/%{_bindir}
+echo %{_builddir}
+cp -avf %{_builddir}/%name-%version/fanout $RPM_BUILD_ROOT/%{_bindir}
+cp -avf %{_builddir}/%name-%version/fanterm $RPM_BUILD_ROOT/%{_bindir}
+cp -avf %{_builddir}/%name-%version/fanmux $RPM_BUILD_ROOT/%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
