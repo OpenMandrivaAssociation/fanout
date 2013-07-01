@@ -1,5 +1,5 @@
 %define version 0.6.1
-Summary:	Fanout lets you run commands on multiple remote machines simultaneously
+Summary:	Lets you run commands on multiple remote machines simultaneously
 Name:		fanout
 Version:	%{version}
 Release:	%mkrel 8
