@@ -2,12 +2,11 @@
 Summary:	Lets you run commands on multiple remote machines simultaneously
 Name:		fanout
 Version:	%{version}
-Release:	%mkrel 8
+Release:	9
 License:	GPL
 Group:		Networking/Remote access
 Source:		http://www.stearns.org/fanout/fanout-%{version}.tar.bz2
 URL:		http://www.stearns.org/fanout/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-build
 Buildarch:	noarch
 requires:	xterm
 
@@ -20,19 +19,16 @@ machines simultaneously, collecting the output in an organized fashion.
 #%build
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/%{_bindir}
+mkdir -p %{buildroot}/%{_bindir}
 #%make DESTDIR=$RPM_BUILD_ROOT install
 echo $RPM_BUILD_DIR
-cp -avf $RPM_BUILD_DIR/%name-%version/fanout $RPM_BUILD_ROOT/%{_bindir}
-cp -avf $RPM_BUILD_DIR/%name-%version/fanterm $RPM_BUILD_ROOT/%{_bindir}
-cp -avf $RPM_BUILD_DIR/%name-%version/fanmux $RPM_BUILD_ROOT/%{_bindir}
+cp -avf $RPM_BUILD_DIR/%name-%version/fanout %{buildroot}/%{_bindir}
+cp -avf $RPM_BUILD_DIR/%name-%version/fanterm %{buildroot}/%{_bindir}
+cp -avf $RPM_BUILD_DIR/%name-%version/fanmux %{buildroot}/%{_bindir}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
 %doc AUTHORS COPYING CREDITS ChangeLog Makefile
 %attr(755,root,root) %{_bindir}/fanmux
 %attr(755,root,root) %{_bindir}/fanout
